@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>:: FBSpy ::</title>
+
+    <link href="content/css/vis.min.css" rel="stylesheet">
+
+    <link href="content/css/jquery-ui.min.css" rel="stylesheet">
+
+    <link href="content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="content/css/font-awesome.min.css" rel="stylesheet">
+    <link href="content/css/jasny-bootstrap.min.css" rel="stylesheet">
+
+    <link href="content/css/facebookspy.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+
+            <p class="text-center">
+
+              <img id="brand-logo" alt="FaceBookSpy" src="content/images/facebook.png" height="30px" width="30px">
+              <!-- <i class="fa fa-1x fa-facebook-square"></i>  -->
+              <!-- FaceBookSpy -->
+
+            </p>
+
+            <!-- <img id="brand-logo" alt="FaceBookSpy" src="content/images/facebook.png" height="88px" width="88px"> -->
+
+        </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav">
+
+            <li class="active">
+
+              <a href="#">
+                  <p class="text-center">
+                    <i class="fa fa-2x fa-connectdevelop"></i>
+                  </p>
+                  Overview
+              </a>
+
+            </li>
+
+            <li>
+
+              <a href="#">
+                  <p class="text-center">
+                    <i class="fa fa-2x fa-code-fork"></i>
+                  </p>
+                  Compare
+              </a>
+
+            </li>
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <p class="text-center">
+                      <i class="fa fa-2x fa-server"></i>
+                    </p>
+                    Tracker
+              </a>
+
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">placeholder</a></li>
+                <li><a href="#">placeholder</a></li>
+                <li class="divider"></li>
+                <li><a href="#">placeholder</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>  <!-- /.navbar-collapse -->
+      </div>  <!-- /.container-fluid -->
+    </nav>
+
+    <div class="hx_sidebar hide">
+      <ul class="sidebar_itemholder hide">
+        <li class="sidebar_item"><i class="fa fa-heart"></i><div class="sidebar_label">Favoriten</div></li>
+        <li class="sidebar_item"><i class="fa fa-user-times"></i><div class="sidebar_label">Ignore</div></li>
+        <li class="sidebar_item"><i class="fa fa-bullhorn"></i><div class="sidebar_label">Broadcast</div></li>
+
+        <li class="sidebar_container list-group">
+
+            <div class="list-group-item">Cras justo odio</div>
+            <div class="list-group-item">Dapibus ac facilisis in</div>
+
+            <div class="list-group-item">Cras justo odio<span class="badge">14</span></div>
+            <div class="list-group-item">Dapibus ac facilisis in<span class="badge">2</span></div>
+
+            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+            <a href="#" class="list-group-item">Morbi leo risus</a>
+
+            <a href="#" class="list-group-item disabled">Cras justo odio</a>
+            <a href="#" class="list-group-item disabled">Dapibus ac facilisis in</a>
+
+            <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
+            <a href="#" class="list-group-item list-group-item-info">Cras sit amet nibh libero</a>
+            <a href="#" class="list-group-item list-group-item-warning">Porta ac consectetur ac</a>
+            <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
+
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="container top_padding" id="">
+
+      <h1>Data View</h1>
+
+      <div class="input-group" id="suchMaske">
+        <span class="input-group-addon" id="userseach"><i class="fa fa-user"></i></span>
+        <input type="text" id="search" class="form-control" placeholder="Username" aria-describedby="userseach" onkeyup="searchFunc(this.value);">
+      </div>
+
+      <!-- <div id="dialog" title="Basic dialog">
+        <p>test dialog</p>
+      </div> -->
+
+      <div class="row" id="userGrid">
+
+        <!-- <div class="col-md-3 userPlaceholder">das</div> -->
+        <!-- <div class="userChart col-md-12" id="userChart_174"> <div class="userName">Jenny Schützek<span class="pull-right userMove"><i class="fa fa-bars"></i></span></div> <div class="VISContainer" id="VISContainer174" uid="174" style="height: 200px;">   <div class="chartPlaceholder" style="display: none;">    <button type="button" id="loaddata_btn_174" uid="174" class="btn btn-block btn-primary center-block loaddata">Click to Load Data</button>   </div> <div class="vis timeline root bottom" style="-webkit-user-select: none; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); max-height: 200px; min-height: 200px; width: 100%; height: 217.5px;"><div class="vispanel background" style="height: 199px; width: 975px; left: 0px; top: 0px;"></div><div class="vispanel background vertical" style="height: 199px; width: 906.5px; left: 69.5px; top: 0px;"><div class="axis" style="top: 147px; left: 0px;"><div class="group"></div><div class="group"></div><div class="group"></div><div class="group"></div></div><div class="timeaxis background"><div class="grid vertical minor day17 march current-month even" style="top: -0.5px; height: 174.5px; left: -21.8249628682186px; width: 69.7724537993211px;"></div><div class="grid vertical minor day18 march current-month odd" style="top: -0.5px; height: 174.5px; left: 47.9474909311026px; width: 69.7724537993211px;"></div><div class="grid vertical minor day19 march current-month even" style="top: -0.5px; height: 174.5px; left: 117.719944730424px; width: 69.7724537993211px;"></div><div class="grid vertical minor day20 march current-month odd" style="top: -0.5px; height: 174.5px; left: 187.492398529745px; width: 69.7724537993211px;"></div><div class="grid vertical minor day21 march current-month even" style="top: -0.5px; height: 174.5px; left: 257.264852329066px; width: 69.7724537993211px;"></div><div class="grid vertical minor day22 march current-month odd" style="top: -0.5px; height: 174.5px; left: 327.037306128387px; width: 69.7724537993212px;"></div><div class="grid vertical minor day23 march current-month even" style="top: -0.5px; height: 174.5px; left: 396.809759927708px; width: 69.7724537993211px;"></div><div class="grid vertical minor day24 march current-month odd" style="top: -0.5px; height: 174.5px; left: 466.582213727029px; width: 69.7724537993211px;"></div><div class="grid vertical minor day25 march current-month even" style="top: -0.5px; height: 174.5px; left: 536.354667526351px; width: 69.7724537993212px;"></div><div class="grid vertical minor day26 march current-month odd" style="top: -0.5px; height: 174.5px; left: 606.127121325672px; width: 69.7724537993211px;"></div><div class="grid vertical minor day27 march current-month even" style="top: -0.5px; height: 174.5px; left: 675.899575124993px; width: 69.7724537993212px;"></div><div class="grid vertical minor day28 march current-month odd" style="top: -0.5px; height: 174.5px; left: 745.672028924314px; width: 69.7724537993212px;"></div><div class="grid vertical minor day29 march current-month even" style="top: -0.5px; height: 174.5px; left: 815.444482723635px; width: 66.8652682243494px;"></div><div class="grid vertical minor day30 march current-month odd" style="top: -0.5px; height: 174.5px; left: 882.309750947984px;"></div></div><div class="currenttime" title="Current time: Saturday, March 7th 2015, 18:11:05" style="position: absolute; top: 0px; height: 100%; left: -666.182433739616px;"></div></div><div class="vispanel background horizontal" style="height: 147.5px; width: 975px; left: 0px; top: -0.5px;"></div><div class="vispanel center" style="-webkit-user-select: none; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); height: 147.5px; width: 906.5px; left: 69px; top: -0.5px;"><div class="content" style="left: 0px; top: -16.5px;"><div class="itemset" style="height: 164px;"><div class="background"><div class="group" style="height: 0px;"><div style="visibility: hidden;">?</div></div><div class="group" style="height: 41px;"><div style="visibility: hidden;">?</div></div><div class="group" style="height: 41px;"><div style="visibility: hidden;">?</div></div><div class="group" style="height: 41px;"><div style="visibility: hidden;">?</div></div><div class="group" style="height: 41px;"><div style="visibility: hidden;">?</div></div></div><div class="foreground"><div class="group" style="height: 41px;"></div><div class="group" style="height: 41px;"><div class="item range" style="left: 149.291298114483px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 150.144880101356px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 154.563802175313px; width: 4.97855529713905px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 166.810321409881px; width: 2.68026358981419px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 171.776763433792px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 179.244192603726px; width: 1.57149531358195px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 181.387434413719px; width: 11.8298226354891px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 205.009124761913px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 208.237715853228px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 216.298695411386px; width: 2.2038081761383px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 221.068094857437px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 269.908004965413px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 283.565316755391px; width: 2.13355119140982px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 285.800619441925px; width: 14.3356550908049px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 300.212991929847px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 300.720941853919px; width: 1.38495090585462px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 302.470098508194px; width: 4.15969802685538px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 317.819230792496px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 322.586207583901px; width: 11.7248409341706px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 339.805629254768px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 371.435000758911px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 379.797197044698px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 388.706105728889px; width: 7.13068017416674px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 426.480944517904px; width: 1.4665136122635px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 447.600032616976px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 447.888328519827px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 450.415157315407px; width: 8.76435695699115px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 460.465943889323px; width: 11.9711441564946px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 487.180556668667px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 495.00734627773px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 499.528019846811px; width: 13.855161919386px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 521.099336813101px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 521.583060190714px; width: 1.82910425758632px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 524.86979499353px; width: 5.02054797766641px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 533.538053316237px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 542.149783030542px; width: 11.7531052383717px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 560.124265399353px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 561.489027516493px; width: 1.67405436025456px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 563.58381623357px; width: 1.5303101846032px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 568.039885678762px; width: 2.72548647653605px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 588.319927718836px; width: 11.7975205735449px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 604.314293690472px; width: 3.20194189021186px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 672.382006170692px; width: 13.6508513775894px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 699.614259492691px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 710.679330811652px; width: 1.87190448966237px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 726.820671165134px; width: 2.03502990248023px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 748.82806596767px; width: 12.2392512706309px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 772.686368919604px; width: 1px; top: 5px;"><div class="content" style="left: 0px;"></div></div><div class="item range" style="left: 776.342154780131px; width: 2.46303222323991px; top: 5px;"><div class="content" style="left: 0px;"></div></div></div><div class="group" style="height: 41px;"></div><div class="group" style="height: 41px;"></div></div></div></div><div class="shadow top"></div><div class="shadow bottom" style="visibility: hidden;"></div></div><div class="vispanel left" style="height: 147.5px; left: 0px; top: -0.5px;"><div class="content" style="left: 0px; top: -16.5px;"><div class="labelset"><div class="vlabel" title="" style="height: 41px;"><div class="inner">Web</div></div><div class="vlabel" title="" style="height: 41px;"><div class="inner">FBApp</div></div><div class="vlabel" title="" style="height: 41px;"><div class="inner">Messenger</div></div><div class="vlabel" title="" style="height: 41px;"><div class="inner">Other</div></div></div></div><div class="shadow top"></div><div class="shadow bottom" style="visibility: hidden;"></div></div><div class="vispanel right" style="height: 147.5px; left: 975.5px; top: -0.5px;"><div class="content" style="left: 0px; top: -16.5px;"></div><div class="shadow top"></div><div class="shadow bottom" style="visibility: hidden;"></div></div><div class="vispanel top" style="width: 906.5px; left: 69px; top: 0px;"></div><div class="vispanel bottom" style="width: 906.5px; left: 69px; top: 147px;"><div class="timeaxis foreground" style="height: 52px;"><div class="text minor measure" style="position: absolute;">0</div><div class="text major measure" style="position: absolute;">0</div><div class="text minor day17 march current-month even" style="top: 0px; left: -21.3249628682186px;">17</div><div class="text minor day18 march current-month odd" style="top: 0px; left: 48.4474909311026px;">18</div><div class="text minor day19 march current-month even" style="top: 0px; left: 118.219944730424px;">19</div><div class="text minor day20 march current-month odd" style="top: 0px; left: 187.992398529745px;">20</div><div class="text minor day21 march current-month even" style="top: 0px; left: 257.764852329066px;">21</div><div class="text major day30 march current-month odd" style="top: 26px; left: 0px;">March 2015</div><div class="text minor day22 march current-month odd" style="top: 0px; left: 327.537306128387px;">22</div><div class="text minor day23 march current-month even" style="top: 0px; left: 397.309759927708px;">23</div><div class="text minor day24 march current-month odd" style="top: 0px; left: 467.082213727029px;">24</div><div class="text minor day25 march current-month even" style="top: 0px; left: 536.854667526351px;">25</div><div class="text minor day26 march current-month odd" style="top: 0px; left: 606.627121325672px;">26</div><div class="text minor day27 march current-month even" style="top: 0px; left: 676.399575124993px;">27</div><div class="text minor day28 march current-month odd" style="top: 0px; left: 746.172028924314px;">28</div><div class="text minor day29 march current-month even" style="top: 0px; left: 815.944482723635px;">29</div><div class="text minor day30 march current-month odd" style="top: 0px; left: 882.809750947984px;">30</div></div></div></div></div></div> -->
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+
+    <!-- <nav class="navbar navbar-inverse navbar-fixed-bottom">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li><a href="#">�&copy; FaceBookSpy</a></li>
+          <li><a href="#">AGB</a></li>
+          <li><a href="#">Impressum</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="update" href="#" id="version-update">UPDATE AVAILABLE</a></li>
+          <li><a href="#" id="version-tag">Version 1.0.0.1</a></li>
+        </ul>
+      </div>
+    </nav> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="content/js/jquery-ui.min.js"></script>
+
+    <script src="content/js/bootstrap.min.js"></script>
+    <script src="content/js/jasny-bootstrap.min.js"></script>
+
+    <script src="content/js/vis.min.js"></script>
+
+    <script src="content/js/facebookspy.js"></script>
+
+  </body>
+
+</html>
