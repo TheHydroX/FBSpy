@@ -27,7 +27,7 @@
 > **2.1.1. with GIT**
 > Clone from online repository
 
-	git clone git@1337-server.eu:1337ner/facebookspy.git
+	git clone https://github.com/NinthArt89/FBSpy.git
 
 **2.2. Create Database-Schema**
 Execute fbspy_schema.sql.
