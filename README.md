@@ -8,7 +8,7 @@
 > **Attention**
 > The tool start tracking user when they go for the first time online since the myTracker.php is started.
 > 
-> Demo: http://brainolution.de/fbspy_poc/
+> Demo: [currently not available]
 -----
 
 # 1. Requirements #
